@@ -130,10 +130,7 @@ function setupImageForLightbox(e) {
 
     var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-    // For Firefox, listening on click first switched to next image then shows the lightbox.
-    // If you know how to fix this without switching to mousedown event, please.
-    // For other browsers the event is click to make it possiblr to drag picture.
-    var event = isFirefox ? 'mousedown' : 'click';
+    var event = isFirefox ? 'mouseup' : 'click';
 
     e.addEventListener(event, function(evt) {
         if (!opts.js_modal_lightbox || evt.button != 0) return;
